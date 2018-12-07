@@ -17,8 +17,19 @@
           <p class="wrapper-contact-right-p1">CONTACT</p>
           <p class="wrapper-contact-right-p2">ME</p>
           <div class="wrapper-contact-right-box">
-            <span>不管多么险峻的山，总是为不畏艰难的人留下一条攀登的路</span>
-            
+            <ul class="wrapper-contact-right-box-ul1">
+              <li>姓名:</li>
+              <li>生日:</li>
+              <li>爱好:</li>
+              <li>电话:</li>
+            </ul>
+            <ul class="wrapper-contact-right-box-ul2">
+              <li>先思力</li>
+              <li>19970812</li>
+              <li>前端,吉他,音乐</li>
+              <li>18804626062</li>
+            </ul>
+            <span>不管多么险峻的高山，总是为不畏艰难的人留下一条攀登的路。</span>
           </div>
         </div>
       </div>
@@ -92,17 +103,15 @@ export default {
     transform: translate(-50%, -50%);
     width: 1000px;
     height: 500px;
-    background: #000;
     &-box {
       margin-bottom: 15px;
       &-img1 {
         position: relative;
         width: 60px;
         height: 60px;
-        border: 1px solid;
         border-radius: 50%;
-        background: #000;
         margin: 25px;
+        margin-left: 200px;
         cursor: pointer;
         & img {
           position: absolute;
@@ -112,7 +121,7 @@ export default {
           width: 60px;
         }
         &:hover {
-          background: brown;
+          background:#a1a3a6;
         }
       }
       &-img2 {
@@ -122,20 +131,21 @@ export default {
         left: 200px;
         width: 200px;
         height: 200px;
+         margin-left: -250px;
+         z-index: 1000;
         & img {
           width: 100%;
           height: 100%;
-          background-color: #fff;
         }
         &::after {
           content: "";
           position: absolute;
           top: 50%;
           margin-top: -25px;
-          left: -50px;
+          left: 200px;
           border: 25px solid #fff;
           border-top-color: transparent;
-          border-left-color: transparent;
+          border-right-color: transparent;
           border-bottom-color: transparent;
         }
       }
@@ -144,38 +154,60 @@ export default {
       position: absolute;
       top: 50%;
       margin-top: -200px;
-      right: 150px;
+      right: 200px;
       width: 400px;
       height: 400px;
-      background: blanchedalmond;
-
       border-radius: 20px;
-      filter: drop-shadow(0px 0px 15px #bbb);
+      background: rgba(86, 83, 100, .1);
+      box-shadow: -10px -10px 5px  #a1a3a6;
       &-box {
-        width: 400px;
-        height: 350px;
-        margin-top: 50px;
-        margin-left: 60px;
+        width: 460px;
+        height: 315px;
+        margin-top: 55px;
         border-radius: 20px;
-        background: #ffebcd;
+        padding-top: 30px;
+        box-shadow: 10px 10px 10px#a1a3a6;
+        & span{
+          position: absolute;
+          left: 50px;
+          bottom: 10px;
+           font-style: oblique;
+            font-size: 20px;
+            color: #feeeed;
+        }
+        &-ul1 {
+          float: left;
+          font-size: 30px;
+          margin-left: 50px;
+          font-family: "微软雅黑";
+          color:#fcaf17;
+        }
+        &-ul2 {
+          float: left;
+          margin-left: 50px;
+          font-size: 30px;
+          font-family: "微软雅黑";
+          color:#cde6c7;
+        }
       }
       &::before {
         content: "";
         position: absolute;
         display: block;
-        right: -60px;
-        top: 0;
+        right: -65px;
+        top: -5px;
         width: 60px;
-        height: 50px;
-        background: linear-gradient(42deg, #000 30%, rgba(0, 0, 0, 0) 40%);
+        height: 60px;
+        background: linear-gradient(42deg, #a1a3a6 30%, rgba(0, 0, 0, 0) 40%);
       }
       &-p1,
       &-p2 {
         float: left;
-        margin-left: 30px;
-        color: #fff;
+        margin-left: 60px;
+        color: #33a3dc;
         font-size: 40px;
         font-family: "微软雅黑";
+        font-style: oblique;
       }
     }
   }
