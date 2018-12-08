@@ -1,20 +1,21 @@
 <template>
-<div class="wrapper">
- <div class="wrapper-cover"></div>
-  <div class="wrapper-box">
-    <div class="wrapper-box-p"></div>
-    <div class="wrapper-box-p"></div>
-    <div class="wrapper-box-p"></div>
-    <div class="wrapper-box-p"></div>
-    <div class="wrapper-box-p"></div>
-    <div class="wrapper-box-p"></div>
-
-
+  <div class="wrapper">
+    <div class="wrapper-cover">
+      <div class="wrapper-box">
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+        </ul>
+      </div>
+    </div>
   </div>
-
-</div>
- 
-
 </template>
 
 
@@ -39,18 +40,19 @@ export default {};
     top: 50%;
     margin-left: -450px;
     margin-top: -300px;
-    &-p{
-      width: 200px;
-      height: 200px;
-      background: #000;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      margin-left: -100px;
-      margin-top: -100px;
-      border-radius: 50%;
-
-
+    & ul {
+   width: 500px;
+   height: 500px;
+   background-color: #000;
+   display: flex;
+    & li{
+      flex-grow: 1;
+      width: 100px;
+      height: 100px;
+      background: blanchedalmond;
+      border-radius: 100%;
+      
+    }
     }
   }
 }
