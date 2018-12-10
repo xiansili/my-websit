@@ -32,7 +32,7 @@ export default {
     top: 0;
     border-top: none;
     border-right: none;
-    border-bottom: 726px #e4e2e3 solid;
+    border-bottom: 900px #e4e2e3 solid;
     border-left:  180px transparent solid;
     width: 40%;
     box-sizing: border-box;
