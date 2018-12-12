@@ -1,13 +1,17 @@
 <template>
-<div class="wrapper">
- <div class="wrapper-cover"></div>
- <div class="wrapper-skill">
-   <div class="wrapper-skill-box">123456</div>
- </div>
-
-</div>
- 
-
+  <div class="wrapper">
+    <div class="wrapper-cover"></div>
+    <div class="wrapper-skill">
+      <div class="wrapper-skill-box">
+        <div class="wrapper-skill-box-piece1 piece">本网站</div>
+        <div class="wrapper-skill-box-piece2 piece">作品2</div>
+        <div class="wrapper-skill-box-piece3 piece">作品3</div>
+        <div class="wrapper-skill-box-piece4 piece">作品4</div>
+        <div class="wrapper-skill-box-piece5 piece">作品5</div>
+        <div class="wrapper-skill-box-piece6 piece">作品6</div>
+      </div>
+    </div>
+  </div>
 </template>
 
 
@@ -31,27 +35,57 @@ export default {};
     top: 50%;
     margin-left: -450px;
     margin-top: -300px;
+    perspective: 1000px;
     &-box {
+      position: relative;
       width: 200px;
       height: 200px;
-      background-color:blueviolet;
-      border: 2px solid black;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      margin-left: -100px;
-      margin-top: -100px;
-      transform:skew(-60deg,0deg);
-      transform:rotateX(-20deg);
-      transform:rotateY(40deg);
-      transform:rotateZ(40deg);
-      transition: transform 2s;
-      box-shadow: 10px 10px 5px #888888;
-      &:hover{
-      //  transform:skew(0deg,0deg);
-        transform:rotateX(0deg);
-        transform:rotateY(0deg);
-        transform:rotateZ(0deg);
+      background-color: #000;
+      margin: 200px auto;
+      perspective-origin: 50% 50%;
+      transform-style: preserve-3d;
+      animation: move 10s infinite linear;
+      @keyframes move {
+        0% {
+          transform: rotateY(0deg);
+        }
+        100% {
+          transform: rotateY(360deg);
+        }
+      }
+      & .piece {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        line-height: 200px;
+        text-align: center;
+        // opacity: 0.3;
+        font-size: 30px;
+        color: #000;
+      }
+      &-piece1 {
+        background: #f66;
+        transform: rotateY(0deg) translateZ(173.2px);
+      }
+      &-piece2 {
+        background: #ff0;
+        transform: rotateY(60deg) translateZ(173.2px);
+      }
+      &-piece3 {
+        background: #069;
+        transform: rotateY(120deg) translateZ(173.2px);
+      }
+      &-piece4 {
+        background: #099;
+        transform: rotateY(180deg) translateZ(173.2px);
+      }
+      &-piece5 {
+        background: #f03;
+        transform: rotateY(240deg) translateZ(173.2px);
+      }
+      &-piece6 {
+        background: #f60;
+        transform: rotateY(300deg) translateZ(173.2px);
       }
     }
   }
