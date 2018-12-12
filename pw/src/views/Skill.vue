@@ -14,24 +14,20 @@
     <div class="skill-box">
       <div class="skill-box-left">
         <ul>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JAVA SCRIPT</li>
-          <li>ES6</li>
-          <li>VUE</li>
-          <li>WEBPACK</li>
+          <li v-for="(item, index) in namelist" :key="index" @click="changeright(index)">{{item}}</li>
         </ul>
       </div>
       <div class="skill-box-right">
-        <div class="skill-box-right-h" v-for="(skill, index) in contentlist" :key="index">
+        <div
+          class="skill-box-right-box"
+          v-for="(skill, index) in contentlist"
+          :key="index"
+          v-show="skill.isshow"
+        >
           <span>{{skill.name}}</span>
-          <hr>
           <span>学习进度</span>
           <span>此处放置进度条</span>
-          <p></p>
-        </div>
-        <div class="skill-box-right-w">
-          <span>WEBPACK</span>
+          <p>{{skill.content}}</p>
         </div>
       </div>
     </div>
@@ -43,58 +39,73 @@
 export default {
   data() {
     return {
-      namelist: [html, css, javascript, es6, vue, webpack],
+      namelist: ["html", "css", "javascript", "es6", "vue", "webpack"],
       contentlist: [
         {
-          name: 'html',
+          name: "html",
           progress: 20,
+          isshow: false,
           content: `能够熟练运用语义化标签对pc端以及移动端
             进行合理排版，对块级元素和行级元素深刻理解。
             标签之间合理嵌套，层级关系分明。能够结合CSS
             对页面进行布局。`
         },
         {
-          name: 'css',
+          name: "css",
           progress: 20,
+          isshow: false,
           content: `能够熟练运用语义化标签对pc端以及移动端
             进行合理排版，对块级元素和行级元素深刻理解。
             标签之间合理嵌套，层级关系分明。能够结合CSS
             对页面进行布局。`
         },
         {
-          name: 'javascript',
+          name: "javascript",
           progress: 20,
+          isshow: false,
           content: `能够熟练运用语义化标签对pc端以及移动端
             进行合理排版，对块级元素和行级元素深刻理解。
             标签之间合理嵌套，层级关系分明。能够结合CSS
             对页面进行布局。`
         },
         {
-          name: 'es6',
+          name: "es6",
           progress: 20,
+          isshow: false,
           content: `能够熟练运用语义化标签对pc端以及移动端
             进行合理排版，对块级元素和行级元素深刻理解。
             标签之间合理嵌套，层级关系分明。能够结合CSS
             对页面进行布局。`
         },
         {
-          name: 'vue',
+          name: "vue",
           progress: 20,
+          isshow: false,
           content: `能够熟练运用语义化标签对pc端以及移动端
             进行合理排版，对块级元素和行级元素深刻理解。
             标签之间合理嵌套，层级关系分明。能够结合CSS
             对页面进行布局。`
         },
         {
-          name: 'webpack',
+          name: "webpack",
           progress: 20,
+          isshow: false,
           content: `能够熟练运用语义化标签对pc端以及移动端
             进行合理排版，对块级元素和行级元素深刻理解。
             标签之间合理嵌套，层级关系分明。能够结合CSS
             对页面进行布局。`
         }
-      ]
-    };
+      ],
+    }; 
+  },
+  methods: {
+    changeright(index) {
+      for (let i = 0; i < this.contentlist.length; i++) {
+        const element = this.contentlist[i];
+        element.isshow = false;
+      }
+      this.contentlist[index].isshow = true;
+    }
   }
 };
 </script>
@@ -117,7 +128,6 @@ export default {
     display: flex;
     &-left {
       flex-grow: 1;
-
       & ul {
         width: 100%;
         height: 100%;
@@ -135,6 +145,9 @@ export default {
       flex-grow: 3;
       background: #000;
       color: #fff;
+      &-box {
+        position: absolute;
+      }
     }
   }
 
