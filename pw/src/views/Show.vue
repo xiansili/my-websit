@@ -1,39 +1,15 @@
 <template>
   <div class="wrapper">
     <div class="wrapper-cover"></div>
-    <div class="wrapper-cube">
-      <ul class="wrapper-cube-ul">
-        <li class="wrapper-cube-ul-li1">最</li>
-        <li class="wrapper-cube-ul-li2">懂</li>
-        <li class="wrapper-cube-ul-li3">你</li>
-        <li class="wrapper-cube-ul-li4">的</li>
-        <li class="wrapper-cube-ul-li5">魔</li>
-        <li class="wrapper-cube-ul-li6">方</li>
-      </ul>
-      <ul class="wrapper-cube-ul">
-        <li class="wrapper-cube-ul-li1">最</li>
-        <li class="wrapper-cube-ul-li2">懂</li>
-        <li class="wrapper-cube-ul-li3">你</li>
-        <li class="wrapper-cube-ul-li4">的</li>
-        <li class="wrapper-cube-ul-li5">魔</li>
-        <li class="wrapper-cube-ul-li6">方</li>
-      </ul>
-      <ul class="wrapper-cube-ul">
-        <li class="wrapper-cube-ul-li1">最</li>
-        <li class="wrapper-cube-ul-li2">懂</li>
-        <li class="wrapper-cube-ul-li3">你</li>
-        <li class="wrapper-cube-ul-li4">的</li>
-        <li class="wrapper-cube-ul-li5">魔</li>
-        <li class="wrapper-cube-ul-li6">方</li>
-      </ul>
-      <ul class="wrapper-cube-ul">
-        <li class="wrapper-cube-ul-li1">最</li>
-        <li class="wrapper-cube-ul-li2">懂</li>
-        <li class="wrapper-cube-ul-li3">你</li>
-        <li class="wrapper-cube-ul-li4">的</li>
-        <li class="wrapper-cube-ul-li5">魔</li>
-        <li class="wrapper-cube-ul-li6">方</li>
-      </ul>
+    <div class="wrapper-show">
+      <div class="wrapper-show-box">
+        <div class="wrapper-show-box-piece1 piece">本网站</div>
+        <div class="wrapper-show-box-piece2 piece">作品</div>
+        <div class="wrapper-show-box-piece3 piece">作品3</div>
+        <div class="wrapper-show-box-piece4 piece">作品4</div>
+        <div class="wrapper-show-box-piece5 piece">作品5</div>
+        <div class="wrapper-show-box-piece6 piece">作品6</div>
+      </div>
     </div>
   </div>
 </template>
@@ -43,6 +19,8 @@
 export default {};
 </script>
 
+
+
 <style lang="scss" scoped>
 .wrapper {
   position: absolute;
@@ -50,103 +28,66 @@ export default {};
   height: 100%;
   background-size: cover;
   background-image: url("../assets/imgs/show.jpg");
-  &-cube {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    top: 50%;
+  &-show {
+    width: 900px;
+    height: 600px;
+    // background-color: #fff;
+    position: absolute;
     left: 50%;
-    transform: translate(-50%, -50%);
-    perspective: 500px;
-   
-    &-ul {
+    top: 50%;
+    margin-left: -450px;
+    margin-top: -300px;
+    perspective: 1000px;
+    &-box {
       position: relative;
-      width: 100px;
-      height: 100px;
+      width: 200px;
+      height: 200px;
+      background-color: #000;
+      margin: 200px auto;
+      perspective-origin: 50% 50%;
       transform-style: preserve-3d;
-      perspective-origin: 50% 50% -50px;
-       transform: rotateX(45deg) rotateY(45deg);
-      // animation: move 10s infinite linear;
+      animation: move 15s infinite linear;
       @keyframes move {
         0% {
-          transform: rotateY(0deg) rotateX(0) translateZ(50px);
-          left: -200px;
-          top: -200px;
-        }
-        25% {
-          transform: rotateY(360deg) rotateX(0) translateZ(50px);
-          left: 200px;
-          top: -200px;
-        }
-        50% {
-          transform: rotateY(360deg) rotateX(-360deg) translateZ(50px);
-          left: 200px;
-          top: 200px;
-        }
-        75% {
-          transform: rotateY(0) rotateX(-360deg) translateZ(50px);
-          left: -200px;
-          top: 200px;
+          transform: rotateY(0deg);
         }
         100% {
-          transform: rotateY(0deg) rotateX(0) translateZ(50px);
-          left: -200px;
-          top: -200px;
+          transform: rotateY(360deg);
         }
       }
-     
-      & li {
+      & .piece {
         position: absolute;
-        width: 100%;
-        height: 100%;
-        line-height: 100px;
+        width: 200px;
+        height: 200px;
+        line-height: 200px;
         text-align: center;
-        font-size: 50px;
+        // opacity: 0.3;
+        font-size: 30px;
+        color: #000;
       }
-      &-li1 {
-        left: 0;
-        top: -100px;
-        transform-origin: bottom;
-        transform: rotateX(90deg);
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.88), #00adff);
+      &-piece1 {
+        background: #f66;
+        transform: rotateY(0deg) translateZ(173.2px);
       }
-      &-li2 {
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.88), #100067);
+      &-piece2 {
+        background: #ff0;
+        transform: rotateY(60deg) translateZ(173.2px);
       }
-      &-li3 {
-        left: 0;
-        top: 100px;
-        transform-origin: top;
-        transform: rotateX(-90deg);
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.88), #100067);
+      &-piece3 {
+        background: #069;
+        transform: rotateY(120deg) translateZ(173.2px);
       }
-      &-li4 {
-        transform: rotateX(180deg) translateZ(100px) rotateZ(-180deg);
-        left: 0;
-        top: 0;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.88), #f0c);
+      &-piece4 {
+        background: #099;
+        transform: rotateY(180deg) translateZ(173.2px);
       }
-      &-li5 {
-        transform: rotateY(-90deg);
-        left: -100px;
-        transform-origin: right;
-        top: 0;
-        background: radial-gradient(
-          circle,
-          rgba(255, 255, 255, 0.88),
-          rgba(33, 33, 33, 1)
-        );
+      &-piece5 {
+        background: #f03;
+        transform: rotateY(240deg) translateZ(173.2px);
       }
-      &-li6 {
-        transform: rotateY(90deg);
-        right: -100px;
-        transform-origin: left;
-        top: 0;
-        background: radial-gradient(
-          circle,
-          rgba(255, 255, 255, 0.88),
-          rgba(33, 33, 33, 1)
-        );
+      &-piece6 {
+        background: #f60;
+        transform: rotateY(300deg) translateZ(173.2px);
       }
     }
   }
