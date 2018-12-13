@@ -24,9 +24,13 @@
           :key="index"
           v-show="skill.isshow"
         >
-          <span>{{skill.name}}</span>
+          <p class="skill-box-right-box-p1">
+            <img :src="skill.imgsrc" alt>
+          </p>
+          <p>{{skill.name}}</p>
           <span>学习进度</span>
-          <span>此处放置进度条</span>
+          <span>
+            此处放置进度条</span>
           <p>{{skill.content}}</p>
         </div>
       </div>
@@ -45,6 +49,7 @@ export default {
           name: "html",
           progress: 20,
           isshow: false,
+          imgsrc: require("../assets/imgs/h5.png"),
           content: `能够熟练运用语义化标签对pc端以及移动端
             进行合理排版，对块级元素和行级元素深刻理解。
             标签之间合理嵌套，层级关系分明。能够结合CSS
@@ -54,6 +59,7 @@ export default {
           name: "css",
           progress: 20,
           isshow: false,
+          imgsrc: require("../assets/imgs/css.png"),
           content: `能够熟练运用语义化标签对pc端以及移动端
             进行合理排版，对块级元素和行级元素深刻理解。
             标签之间合理嵌套，层级关系分明。能够结合CSS
@@ -63,6 +69,7 @@ export default {
           name: "javascript",
           progress: 20,
           isshow: false,
+          imgsrc: require("../assets/imgs/js.png"),
           content: `能够熟练运用语义化标签对pc端以及移动端
             进行合理排版，对块级元素和行级元素深刻理解。
             标签之间合理嵌套，层级关系分明。能够结合CSS
@@ -72,6 +79,7 @@ export default {
           name: "es6",
           progress: 20,
           isshow: false,
+          imgsrc: require("../assets/imgs/vue.png"),
           content: `能够熟练运用语义化标签对pc端以及移动端
             进行合理排版，对块级元素和行级元素深刻理解。
             标签之间合理嵌套，层级关系分明。能够结合CSS
@@ -81,6 +89,7 @@ export default {
           name: "vue",
           progress: 20,
           isshow: false,
+          imgsrc: require("../assets/imgs/vue.png"),
           content: `能够熟练运用语义化标签对pc端以及移动端
             进行合理排版，对块级元素和行级元素深刻理解。
             标签之间合理嵌套，层级关系分明。能够结合CSS
@@ -90,13 +99,14 @@ export default {
           name: "webpack",
           progress: 20,
           isshow: false,
+          imgsrc: require("../assets/imgs/wp.png"),
           content: `能够熟练运用语义化标签对pc端以及移动端
             进行合理排版，对块级元素和行级元素深刻理解。
             标签之间合理嵌套，层级关系分明。能够结合CSS
             对页面进行布局。`
         }
-      ],
-    }; 
+      ]
+    };
   },
   methods: {
     changeright(index) {
@@ -118,7 +128,7 @@ export default {
   background-size: cover;
   background-image: url("../assets/imgs/skill.jpg");
   & .skill-box {
-    width: 600px;
+    width: 900px;
     height: 600px;
     position: relative;
     top: 50%;
@@ -138,15 +148,40 @@ export default {
           text-align: center;
           line-height: 100px;
           border-bottom: 1px solid #000;
+          &:hover {
+            background: blue;
+            cursor: pointer;
+          }
         }
       }
     }
     &-right {
-      flex-grow: 3;
+      flex-grow: 4;
       background: #000;
       color: #fff;
       &-box {
         position: absolute;
+        margin: 10px auto;
+        & p {
+          text-align: center;
+          font-size: 20px;
+        }
+        &-p1 {
+          position: relative;
+          width: 150px;
+          height: 150px;
+          margin: 10px auto;
+          background: #fff;
+          text-align: center;
+          border-radius: 50%;
+          & img {
+            width: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
       }
     }
   }
