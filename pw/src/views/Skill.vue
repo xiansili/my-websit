@@ -14,7 +14,21 @@
     <div class="skill-box">
       <div class="skill-box-left">
         <ul>
-          <li v-for="(item, index) in namelist" :key="index" @click="changeright(index)">{{item}}</li>
+          <li
+            v-for="(item, index) in namelist"
+            :key="index"
+            @click="changeright(index)"
+            :class="{'bgcolor': item.isshow}"
+          >
+            <img :src="item.imgsrc" alt>
+            {{item.name}}
+            <span class="right" v-show="item.isleft"></span>
+            <span class="bottom" v-show="item.isbottom"></span>
+            <span class="bottom-border"></span>
+          </li>
+          <span class="right"></span>
+          <span class="top"></span>
+          <span class="bottom"></span>
         </ul>
       </div>
       <div class="skill-box-right">
@@ -29,8 +43,7 @@
           </p>
           <p>{{skill.name}}</p>
           <span>学习进度</span>
-          <span>
-            此处放置进度条</span>
+          <span>此处放置进度条</span>
           <p>{{skill.content}}</p>
         </div>
       </div>
@@ -43,12 +56,43 @@
 export default {
   data() {
     return {
-      namelist: ["html", "css", "javascript", "es6", "vue", "webpack"],
+      namelist: [
+        {
+          name: "html",
+          imgsrc: require("../assets/imgs/h5.png"),
+          isleft: true
+        },
+        {
+          name: "css",
+          imgsrc: require("../assets/imgs/css.png"),
+          isleft: false
+        },
+        {
+          name: "javascript",
+          imgsrc: require("../assets/imgs/js.png"),
+          isleft: false
+        },
+        {
+          name: "es6",
+          imgsrc: require("../assets/imgs/vue.png"),
+          isleft: false
+        },
+        {
+          name: "vue",
+          imgsrc: require("../assets/imgs/vue.png"),
+          isleft: false
+        },
+        {
+          name: "webpack",
+          imgsrc: require("../assets/imgs/wp.png"),
+          isleft: false
+        }
+      ],
       contentlist: [
         {
           name: "html",
           progress: 20,
-          isshow: false,
+          isshow: true,
           imgsrc: require("../assets/imgs/h5.png"),
           content: `能够熟练运用语义化标签对pc端以及移动端
             进行合理排版，对块级元素和行级元素深刻理解。
@@ -114,7 +158,16 @@ export default {
         const element = this.contentlist[i];
         element.isshow = false;
       }
+      for (let i = 0; i < this.namelist.length; i++) {
+        const element = this.namelist[i];
+        element.isleft = false;
+        element.isbottom = false;
+        element.isshow = false;
+      }
       this.contentlist[index].isshow = true;
+      this.namelist[index].isleft = true;
+      this.namelist[index].isshow = true;
+      this.namelist[index].isbottom = true;
     }
   }
 };
@@ -134,7 +187,6 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
     display: flex;
     &-left {
       flex-grow: 1;
@@ -143,25 +195,88 @@ export default {
         height: 100%;
         display: flex;
         flex-direction: column;
+        border-right: 1px solid #000;
+        & .bgcolor {
+          color: #f45d5d;
+        }
+        & .top {
+          position: absolute;
+          height: 4px;
+          width: 265px;
+          background: #f45d5d;
+          z-index: 999;
+        }
+         & .bottom {
+          position: absolute;
+          bottom: -5px;
+          height: 4px;
+          width: 265px;
+          background: #f45d5d;
+          z-index: 999;
+        }
         & li {
+          position: relative;
           flex-grow: 1;
           text-align: center;
           line-height: 100px;
-          border-bottom: 1px solid #000;
-          &:hover {
-            background: blue;
-            cursor: pointer;
+          border-bottom: 1px solid #f45d5d;
+          background: #fff;
+          z-index: 100;
+          font-family: "微软雅黑";
+          font-size: 30px;
+          cursor: pointer;
+          & img {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: 50%;
+            margin-top: -25px;
+            left: 15px;
+          }
+          & .bottom {
+            position: absolute;
+            top: 96px;
+            left: 50%;
+            margin-left: -50px;
+            height: 4px;
+            width: 100px;
+            background: #f45d5d;
+          }
+          & .bottom-border {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100px;
+            width: 4px;
+            background: #f45d5d;
+          }
+
+          & .right {
+            position: absolute;
+            border-width: 25px;
+            border-style: solid;
+            border-left-color: #fff;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            top: 50%;
+            transform: translateY(-50%);
+            right: -49px;
           }
         }
       }
     }
     &-right {
-      flex-grow: 4;
-      background: #000;
+      flex-grow: 5;
+      background-color: #363636;
+      opacity: 0.8;
+      height: 606px;
       color: #fff;
       &-box {
         position: absolute;
-        margin: 10px auto;
+        left: 50%;
+        margin-left: -120px;
+        width: 500px;
         & p {
           text-align: center;
           font-size: 20px;
@@ -174,6 +289,7 @@ export default {
           background: #fff;
           text-align: center;
           border-radius: 50%;
+          border: 4px solid #f45d5d;
           & img {
             width: 100px;
             position: absolute;
