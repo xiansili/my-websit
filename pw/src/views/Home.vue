@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="wrapper-cover"></div>
+    <!-- <div class="wrapper-cover"></div> -->
     <div class="wrapper-me">
       <div class="wrapper-me-front cube">
         <h2 class="cube-name">I am xian si li</h2>
@@ -8,24 +8,9 @@
         <p class="cube-name">我叫先思力</p>
         <p class="cube-job">我是一名前端开发工程师</p>
       </div>
-      <div class="wrapper-me-left cube">
-        <h2 class="cube-name">I am xian si li</h2>
-        <strong class="cube-welecome">欢迎来到我的网站</strong>
-        <p class="cube-name">我叫先思力</p>
-        <p class="cube-job">我是一名前端开发工程师</p>
-      </div>
-      <div class="wrapper-me-right cube">
-        <h2 class="cube-name">I am xian si li</h2>
-        <strong class="cube-welecome">欢迎来到我的网站</strong>
-        <p class="cube-name">我叫先思力</p>
-        <p class="cube-job">我是一名前端开发工程师</p>
-      </div>
-      <div class="wrapper-me-back cube">
-        <h2 class="cube-name">I am xian si li</h2>
-        <strong class="cube-welecome">欢迎来到我的网站</strong>
-        <p class="cube-name">我叫先思力</p>
-        <p class="cube-job">我是一名前端开发工程师</p>
-      </div>
+      <div class="wrapper-me-left cube"></div>
+      <div class="wrapper-me-right cube"></div>
+      <div class="wrapper-me-back cube"></div>
     </div>
     <div class="wrapper-next">
       <router-link to="/about">
@@ -48,7 +33,7 @@ export default {
   width: 100%;
   height: 100%;
   background-size: cover;
-  background-image: url("../assets/imgs/home.jpg");
+  background-image: url("../assets/imgs/home/home3.jpg");
   perspective: 2000px;
   &-me {
     position: relative;
@@ -60,15 +45,16 @@ export default {
     margin-left: -350px;
     transform-origin: 50% 50%;
     transform-style: preserve-3d;
+    color: #000;
 
     &:hover {
-      animation: mycube 0.5s linear;
+      animation: mycube 10s linear;
       @keyframes mycube {
         0% {
           transform: rotateY(0deg);
         }
         100% {
-          transform: rotateY(180deg);
+          transform: rotateY(-360deg);
         }
       }
     }
@@ -77,8 +63,11 @@ export default {
       width: 700px;
       height: 280px;
       position: absolute;
-      background: #ffc20e;
-      border: 2px solid #000;
+      background-position: center;
+      background-size: cover;
+      // background: #d3d7d4;
+      // border: 2px solid #000;
+      background: #fff;
       &-name,
       &-job {
         text-align: center;
@@ -87,19 +76,24 @@ export default {
         float: left;
         width: 100%;
         text-align: center;
+        margin-top: 20px;
       }
     }
     &-front {
       transform: translateZ(350px);
+      background-image: url("../assets/imgs/home/home2.jpg");
     }
     &-left {
       transform: rotateY(90deg) translateZ(350px);
+      background-image: url("../assets/imgs/home/home1.jpg");
     }
     &-right {
       transform: rotateY(-90deg) translateZ(350px);
+      background-image: url("../assets/imgs/home/home3.jpg");
     }
     &-back {
       transform: rotateY(180deg) translateZ(350px);
+      background-image: url("../assets/imgs/home/home5.jpg");
     }
   }
 
