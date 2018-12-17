@@ -3,28 +3,28 @@
     <div class="wrapper-cover"></div>
     <div class="wrapper-me">
       <div class="wrapper-me-front cube">
-        <h2 class="wrapper-me-name">I am xian si li</h2>
-        <strong class="wrapper-me-welecome">欢迎来到我的网站</strong>
-        <p class="wrapper-me-name">我叫先思力</p>
-        <p class="wrapper-me-job">我是一名前端开发工程师</p>
+        <h2 class="cube-name">I am xian si li</h2>
+        <strong class="cube-welecome">欢迎来到我的网站</strong>
+        <p class="cube-name">我叫先思力</p>
+        <p class="cube-job">我是一名前端开发工程师</p>
       </div>
       <div class="wrapper-me-left cube">
-        <h2 class="wrapper-me-name">I am xian si li</h2>
-        <strong class="wrapper-me-welecome">欢迎来到我的网站</strong>
-        <p class="wrapper-me-name">我叫先思力</p>
-        <p class="wrapper-me-job">我是一名前端开发工程师</p>
+        <h2 class="cube-name">I am xian si li</h2>
+        <strong class="cube-welecome">欢迎来到我的网站</strong>
+        <p class="cube-name">我叫先思力</p>
+        <p class="cube-job">我是一名前端开发工程师</p>
       </div>
       <div class="wrapper-me-right cube">
-        <h2 class="wrapper-me-name">I am xian si li</h2>
-        <strong class="wrapper-me-welecome">欢迎来到我的网站</strong>
-        <p class="wrapper-me-name">我叫先思力</p>
-        <p class="wrapper-me-job">我是一名前端开发工程师</p>
+        <h2 class="cube-name">I am xian si li</h2>
+        <strong class="cube-welecome">欢迎来到我的网站</strong>
+        <p class="cube-name">我叫先思力</p>
+        <p class="cube-job">我是一名前端开发工程师</p>
       </div>
       <div class="wrapper-me-back cube">
-        <h2 class="wrapper-me-name">I am xian si li</h2>
-        <strong class="wrapper-me-welecome">欢迎来到我的网站</strong>
-        <p class="wrapper-me-name">我叫先思力</p>
-        <p class="wrapper-me-job">我是一名前端开发工程师</p>
+        <h2 class="cube-name">I am xian si li</h2>
+        <strong class="cube-welecome">欢迎来到我的网站</strong>
+        <p class="cube-name">我叫先思力</p>
+        <p class="cube-job">我是一名前端开发工程师</p>
       </div>
     </div>
     <div class="wrapper-next">
@@ -48,35 +48,37 @@ export default {
   width: 100%;
   height: 100%;
   background-size: cover;
-  background-image: url("../assets/1.jpg");
+  background-image: url("../assets/imgs/home.jpg");
+  perspective: 2000px;
   &-me {
     position: relative;
     width: 700px;
     height: 280px;
-    background: #fff;
-    // border-radius: 10px;
     top: 50%;
     left: 50%;
     margin-top: -140px;
     margin-left: -350px;
     transform-origin: 50% 50%;
-    perspective: 1500px;
     transform-style: preserve-3d;
-    animation: mycube 5s infinite linear;
-    @keyframes mycube {
-      0% {
-        transform: rotateY(0deg);
-      }
-      100% {
-        transform: rotateY(360deg);
+
+    &:hover {
+      animation: mycube 0.5s linear;
+      @keyframes mycube {
+        0% {
+          transform: rotateY(0deg);
+        }
+        100% {
+          transform: rotateY(180deg);
+        }
       }
     }
+
     & .cube {
       width: 700px;
       height: 280px;
       position: absolute;
-      opacity: 0.6;
-      // box-shadow: 10px 10px 5px #888888;
+      background: #ffc20e;
+      border: 2px solid #000;
       &-name,
       &-job {
         text-align: center;
@@ -89,23 +91,15 @@ export default {
     }
     &-front {
       transform: translateZ(350px);
-      background: #77ac98;
-      opacity: 0.1;
     }
     &-left {
       transform: rotateY(90deg) translateZ(350px);
-      background: #77ac98;
-      opacity: 0.1;
     }
     &-right {
       transform: rotateY(-90deg) translateZ(350px);
-      background: #77ac98;
-      opacity: 0.1;
     }
     &-back {
       transform: rotateY(180deg) translateZ(350px);
-      background: red;
-      opacity: 0.1;
     }
   }
 
