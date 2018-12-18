@@ -6,10 +6,10 @@
     <div class="comment-dialog" v-show="isopen">
       <div class="comment-dialog-content">
         <h3>欢迎给我留言</h3>
-        <label for="name">名字</label>
-        <input id="name" type="text">
-        <textarea id="container" placeholder="留下点什么吧..." cols="100" rows="10" :value="value"></textarea>
-        <!-- <button @click="publish">发表</button> -->
+        <!-- <label for="name">名字</label>
+        <input id="name" type="text"> -->
+        <textarea  placeholder="留下点什么吧..." cols="100" rows="10" :value="value"></textarea>
+        <button @click="publish">发表</button>
         <ul class="comment-dialog-content-ul">
           <li v-for="(item, index) in commentList" :key="index">
             <span>{{item.name}}:</span>
@@ -79,6 +79,9 @@ export default {
       & textarea{
           width: 500px;
           height: 200px;
+          resize: none;
+          outline: none;
+          border: none;
       }
       &-ul {
         height: 100px;
