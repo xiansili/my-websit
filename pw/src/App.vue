@@ -1,10 +1,11 @@
 <template>
   <div id="app">
-   <Nav :navList="navList"></Nav>
-   <Menu :navList="navList"></Menu>
-   <Music></Music>
-   <Dialog></Dialog>
-   <router-view/>
+    <Nav :navList="navList"></Nav>
+    <Menu :navList="navList"></Menu>
+    <Music></Music>
+    <Dialog></Dialog>
+    <Comment></Comment>
+    <router-view/>
   </div>
 </template>
 
@@ -12,16 +13,15 @@
 import Nav from "@/components/Nav.vue";
 import Menu from "@/components/Menu.vue";
 import Music from "@/components/Music.vue";
+import Comment from "@/components/Comment.vue";
 // import Dialog from "@/components/Dialog.vue";
-
-
-
 
 export default {
   components: {
     Nav,
     Menu,
     Music,
+    Comment
     // Dialog
   },
   data() {
