@@ -1,14 +1,14 @@
 <template>
   <div class="comment">
-    <div class="comment-open" @click="isopen=true">
+    <div class="comment-open" @click="isComment = true">
       <div class="comment-open-me">给我留言</div>
     </div>
-    <div class="comment-dialog" v-show="isopen">
+    <div class="comment-dialog" v-show="isComment">
       <div class="comment-dialog-content">
-        <h3>欢迎给我留言</h3>
-        <!-- <label for="name">名字</label>
-        <input id="name" type="text"> -->
-        <textarea  placeholder="留下点什么吧..." cols="100" rows="10" :value="value"></textarea>
+        <h2>欢迎给我留言</h2>
+        <div class="comment-dialog-content-text">
+          <textarea placeholder="留下点什么吧..." v-model="content"></textarea>
+        </div>
         <button @click="publish">发表</button>
         <ul class="comment-dialog-content-ul">
           <li v-for="(item, index) in commentList" :key="index">
@@ -18,7 +18,7 @@
           </li>
         </ul>
       </div>
-      <div class="comment-dialog-close" @click="isopen=false">
+      <div class="comment-dialog-close" @click="isComment=false">
         <img src="@/assets/close.png" alt="关闭">
       </div>
     </div>
@@ -27,18 +27,65 @@
 
 
 <script>
+import axios from 'axios';
 export default {
-  data(){
+  data() {
     return {
-      isopen: false,
-      commentList:[
-          {
-              name:"小王",
-              content:"第一次来"
-          }
-      ]
+      isComment: true,
+      content:'',
+      commentList: [
+        {
+          name: "小王",
+          content: "第一次来"
+        },
+        {
+          name: "小王",
+          content: "第一次来"
+        },
+        {
+          name: "小王",
+          content: "第一次来"
+        },
+        {
+          name: "小王",
+          content: "第一次来"
+        },{
+          name: "小王",
+          content: "第一次来"
+        },
+        {
+          name: "小王",
+          content: "第一次来"
+        },
+        {
+          name: "小王",
+          content: "第一次来"
+        }
+      ],
     };
-  }
+  },
+  methods: {
+    publish(){
+      axios({
+        url:'http://localhost:4000/user/registUser',
+        method:'post',
+        data:{
+          userContent:this.content,
+        }
+      }).then((res)=>{
+        console.log(res)
+      })
+      }
+    },
+
+    created() {
+      axios({
+        method:'get',
+        url:'http://localhost:4000/user/registUser',
+      }).then(res=>{
+        console.log(res)
+      })
+    },
 };
 </script>
 
@@ -65,43 +112,54 @@ export default {
     left: 0;
     bottom: 0;
     right: 0;
-    background: rgba($color: #333, $alpha: 0.8);
+    background: rgba($color: #333, $alpha: .8);
     z-index: 100;
     &-content {
       position: relative;
       width: 1000px;
-      height: 500px;
-      top: 50%;
+      height: 80%;
+      top:50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate( -50%,-50%);
       background: #fff;
       text-align: center;
-      & textarea{
-          width: 500px;
-          height: 200px;
-          resize: none;
-          outline: none;
-          border: none;
+      overflow-y: scroll;
+      word-break: break-all;
+      &-text {
+        height: 150px;
+        width: 800px;
+        margin:0 auto;
+        background: #333;
       }
+      & textarea {
+        width: 100%;
+        text-indent: 2em;
+        height: 100%;
+        resize: none;
+        outline: none;
+        border: none;
+        background: transparent;
+        color: #fff;
+      }
+      & button{
+        margin-top: 10px;
+        margin-left: -700px;
+        width: 100px;
+        height: 30px;
+        margin-bottom: 10px;;
+      } 
       &-ul {
-        height: 100px;
-        background: #000;
+        background: #fff;
         color: #fff;
         & li {
-          flex-grow: 1;
-          & a {
-            outline: none;
-            color: #000;
-            &.router-link-active {
-              color: blueviolet;
-            }
-          }
+        background: #000;
+        margin-top: 10px;
         }
       }
     }
     &-close {
       position: fixed;
-      z-index: 99;
+      z-index: 999;
       padding: 10px 10px;
       width: 40px;
       top: 30px;
