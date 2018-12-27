@@ -105,6 +105,8 @@ export default {
     justify-content: center;
     justify-items: center;
     cursor: pointer;
+    border-radius: 10px;
+  
   }
   &-dialog {
     position: absolute;
