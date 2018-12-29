@@ -14,7 +14,7 @@
           <li v-for="(item, index) in commentList" :key="index">
             <span>{{item.name}}:</span>
             <br>
-            <span>{{item.content}}</span>
+            <span>{{item.userContent}}</span>
           </li>
         </ul>
       </div>
@@ -27,65 +27,42 @@
 
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 export default {
   data() {
     return {
       isComment: true,
-      content:'',
-      commentList: [
-        {
-          name: "小王",
-          content: "第一次来"
-        },
-        {
-          name: "小王",
-          content: "第一次来"
-        },
-        {
-          name: "小王",
-          content: "第一次来"
-        },
-        {
-          name: "小王",
-          content: "第一次来"
-        },{
-          name: "小王",
-          content: "第一次来"
-        },
-        {
-          name: "小王",
-          content: "第一次来"
-        },
-        {
-          name: "小王",
-          content: "第一次来"
-        }
-      ],
+      content: "",
+      commentList: ""
     };
   },
   methods: {
-    publish(){
+    publish() {
       axios({
-        url:'http://localhost:4000/user/registUser',
-        method:'post',
-        data:{
-          userContent:this.content,
+        url: "http://localhost:4000/user/registUser",
+        method: "post",
+        data: {
+          userContent: this.content
         }
-      }).then((res)=>{
-        console.log(res)
-      })
-      }
-    },
+      }).then(res => {
+        console.log(res);
+      });
+      this.commentList.push(userContent="this.content");
+      console.log(this.commentList);
+    }
+  },
 
-    created() {
-      axios({
-        method:'get',
-        url:'http://localhost:4000/user/registUser',
-      }).then(res=>{
-        console.log(res)
+  created() {
+    axios({
+      method: "get",
+      url: "http://localhost:4000/user/registUser"
+    })
+      .then(res => {
+        console.log(res);
+        this.commentList = res.data;
       })
-    },
+      .catch(err => {});
+  }
 };
 </script>
 
@@ -106,7 +83,6 @@ export default {
     justify-items: center;
     cursor: pointer;
     border-radius: 10px;
-  
   }
   &-dialog {
     position: absolute;
@@ -114,15 +90,15 @@ export default {
     left: 0;
     bottom: 0;
     right: 0;
-    background: rgba($color: #333, $alpha: .8);
+    background: rgba($color: #333, $alpha: 0.8);
     z-index: 100;
     &-content {
       position: relative;
       width: 1000px;
       height: 80%;
-      top:50%;
+      top: 50%;
       left: 50%;
-      transform: translate( -50%,-50%);
+      transform: translate(-50%, -50%);
       background: #fff;
       text-align: center;
       overflow-y: scroll;
@@ -130,7 +106,7 @@ export default {
       &-text {
         height: 150px;
         width: 800px;
-        margin:0 auto;
+        margin: 0 auto;
         background: #333;
       }
       & textarea {
@@ -143,19 +119,19 @@ export default {
         background: transparent;
         color: #fff;
       }
-      & button{
+      & button {
         margin-top: 10px;
         margin-left: -700px;
         width: 100px;
         height: 30px;
-        margin-bottom: 10px;;
-      } 
+        margin-bottom: 10px;
+      }
       &-ul {
         background: #fff;
         color: #fff;
         & li {
-        background: #000;
-        margin-top: 10px;
+          background: #000;
+          margin-top: 10px;
         }
       }
     }

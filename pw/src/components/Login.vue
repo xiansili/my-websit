@@ -23,28 +23,28 @@ export default {
       content:'',
     };
   },
-  methods: {
-    publish(){
-      axios({
-        url:'http://localhost:4000/user/registUser',
-        method:'post',
-        data:{
-          userContent:this.content,
-        }
-      }).then((res)=>{
-        console.log(res)
-      })
-      }
-    },
+  // methods: {
+  //   publish(){
+  //     axios({
+  //       url:'http://localhost:4000/user/registUser',
+  //       method:'post',
+  //       data:{
+  //         userContent:this.content,
+  //       }
+  //     }).then((res)=>{
+  //       console.log(res)
+  //     })
+  //     }
+  //   },
 
-    created() {
-      axios({
-        method:'get',
-        url:'http://localhost:4000/user/registUser',
-      }).then(res=>{
-        console.log(res)
-      })
-    },
+    // created() {
+    //   axios({
+    //     method:'get',
+    //     url:'http://localhost:4000/user/registUser',
+    //   }).then(res=>{
+    //     console.log(res)
+    //   })
+    // },
 };
 </script>
 
