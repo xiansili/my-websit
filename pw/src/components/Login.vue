@@ -6,7 +6,7 @@
     <div class="Login-dialog" v-show="isComment">
       <div class="Login-dialog-content">
       </div>
-      <div class="comment-dialog-close" @click="isComment=false">
+      <div class="Login-dialog-close" @click="isComment=false">
         <img src="@/assets/close.png" alt="关闭">
       </div>
     </div>
@@ -49,20 +49,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.comment {
+.Login {
   &-open {
     position: fixed;
     z-index: 99;
     padding: 10px 10px;
-    width: 100px;
-    height: 20px;
-    bottom: 30px;
+    width: 20px;
+    height: 100px;
+    top: 50%;
+    margin-top: -50px;
     left: 10px;
     background-color: #000;
     color: #fff;
-    display: flex;
-    justify-content: center;
-    justify-items: center;
+    line-height: 35px;
+    text-align: center;
     cursor: pointer;
     border-radius: 10px;
   
