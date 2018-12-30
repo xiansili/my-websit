@@ -12,7 +12,7 @@
         <button @click="publish">发表</button>
         <ul class="comment-dialog-content-ul">
           <li v-for="(item, index) in commentList" :key="index">
-            <span>{{item.name}}:</span>
+            <span class="name">{{item.name}}:</span>
             <br>
             <span>{{item.userContent}}</span>
           </li>
@@ -33,7 +33,7 @@ export default {
     return {
       isComment: true,
       content: "",
-      commentList: ""
+      commentList: []
     };
   },
   methods: {
@@ -47,7 +47,7 @@ export default {
       }).then(res => {
         console.log(res);
       });
-      this.commentList.push(userContent="this.content");
+      this.commentList.push({userContent: this.content});
       console.log(this.commentList);
     }
   },
