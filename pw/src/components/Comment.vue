@@ -81,7 +81,7 @@ export default {
     display: flex;
     justify-content: center;
     justify-items: center;
-    cursor: pointer;x
+    cursor: pointer;
     border-radius: 10px;
   }
   &-dialog {
