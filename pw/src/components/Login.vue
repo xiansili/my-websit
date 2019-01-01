@@ -5,6 +5,10 @@
     </div>
     <div class="Login-dialog" v-show="isComment">
       <div class="Login-dialog-content">
+        <ul>
+          <li>登陆</li>
+          <li>注册</li>
+        </ul>
       </div>
       <div class="Login-dialog-close" @click="isComment=false">
         <img src="@/assets/close.png" alt="关闭">
@@ -77,15 +81,13 @@ export default {
     z-index: 100;
     &-content {
       position: relative;
-      width: 1000px;
-      height: 80%;
+      width: 400px;
+      height: 300px;
       top:50%;
       left: 50%;
       transform: translate( -50%,-50%);
       background: #fff;
       text-align: center;
-      overflow-y: scroll;
-      word-break: break-all;
       &-text {
         height: 150px;
         width: 800px;
