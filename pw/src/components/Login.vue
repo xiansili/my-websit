@@ -9,19 +9,16 @@
           <li @click="login" >登陆</li>
           <li @click="regist">注册</li>
         </ul>
-        <div v-show="islogin">
-          <label for="username">用户名</label>
-          <input id="username" type="text">
+        <div v-show="islogin" class="login">
+          <input  type="text" placeholder="用户名">
           <br>
-          <label for="password">密码</label>
-          <input id="password" type="password">
+          <input  type="password" placeholder="密码">
+          <br>
+          <button>登陆</button>
           </div>
         <div v-show="isregist">
-          <label for="username">用户名</label>
-          <input id="username" type="text">
-          <br>
-          <label for="password">密码</label>
-          <input id="password" type="password">
+          <input  type="text" placeholder="用户名">
+          <input  type="password" placeholder="密码">
         </div>
       </div>
       <div class="Login-dialog-close" @click="isComment=false">
@@ -106,6 +103,19 @@ export default {
            background:blueviolet;
          }
       
+        }
+      }
+      & .login{
+        margin-top: 80px;
+        & label{
+          font-size: 25px;
+        }
+        & input{
+          width: 150;
+          height: 30px;
+          border: 1px solid #000;
+          margin-bottom: 20px;
+          // background-color: antiquewhite;
         }
       }
     
