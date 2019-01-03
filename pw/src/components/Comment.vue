@@ -109,7 +109,6 @@ export default {
         margin: 0 auto;
         background: #333;
       }
-      
       & textarea {
         width: 100%;
         text-indent: 2em;
