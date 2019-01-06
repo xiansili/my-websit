@@ -12,7 +12,7 @@
         <button @click="publish">发表</button>
         <ul class="comment-dialog-content-ul">
           <li v-for="(item, index) in commentList" :key="index">
-            <span class="name">{{item.name}}:</span>
+            <span class="name">呢称：{{item.name}}</span>
             <br>
             <span>{{item.userContent}}</span>
           </li>
@@ -65,6 +65,8 @@ export default {
   }
 };
 </script>
+
+
 
 <style lang="scss" scoped>
 .comment {
@@ -128,14 +130,20 @@ export default {
         width: 100px;
         height: 30px;
         margin-bottom: 10px;
-        
+
       }
       &-ul {
         background: #fff;
         color: #fff;
+        margin: 0 auto;
+        width: 800px;
         & li {
           background: #000;
           margin-top: 10px;
+          
+          & .name{
+            float: left;
+          }
         }
       }
     }
