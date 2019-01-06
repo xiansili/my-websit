@@ -120,7 +120,7 @@ export default {
         border: none;
         background: transparent;
         color: #fff;
-        
+
       }
       & button {
         margin-top: 10px;
@@ -128,6 +128,7 @@ export default {
         width: 100px;
         height: 30px;
         margin-bottom: 10px;
+        
       }
       &-ul {
         background: #fff;
