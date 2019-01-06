@@ -83,7 +83,7 @@ export default {
     justify-items: center;
     cursor: pointer;
     border-radius: 10px;
-    
+
   }
 
   &-dialog {
@@ -120,6 +120,7 @@ export default {
         border: none;
         background: transparent;
         color: #fff;
+        
       }
       & button {
         margin-top: 10px;
