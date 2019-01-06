@@ -83,8 +83,9 @@ export default {
     justify-items: center;
     cursor: pointer;
     border-radius: 10px;
+    
   }
-  
+
   &-dialog {
     position: absolute;
     top: 0;
