@@ -14,7 +14,7 @@
           <li v-for="(item, index) in commentList" :key="index">
             <span class="name">呢称：{{item.name}}</span>
             <br>
-            <span>{{item.userContent}}</span>
+            <p class="container">{{item.userContent}}</p>
           </li>
         </ul>
       </div>
@@ -47,7 +47,7 @@ export default {
       }).then(res => {
         console.log(res);
       });
-      this.commentList.push({userContent: this.content});
+      this.commentList.push({ userContent: this.content });
       console.log(this.commentList);
     }
   },
@@ -85,7 +85,6 @@ export default {
     justify-items: center;
     cursor: pointer;
     border-radius: 10px;
-
   }
 
   &-dialog {
@@ -103,15 +102,13 @@ export default {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background: #fff;
+      background: #d3d7d4;
       text-align: center;
-      overflow-y: scroll;
-      word-break: break-all;
       &-text {
         height: 150px;
         width: 800px;
         margin: 0 auto;
-        background: #333;
+        background: #555;
       }
       & textarea {
         width: 100%;
@@ -122,7 +119,7 @@ export default {
         border: none;
         background: transparent;
         color: #fff;
-
+        font-size: 24px;
       }
       & button {
         margin-top: 10px;
@@ -130,18 +127,23 @@ export default {
         width: 100px;
         height: 30px;
         margin-bottom: 10px;
-
       }
       &-ul {
         background: #fff;
         color: #fff;
         margin: 0 auto;
-        width: 800px;
+        width: 80%;
+        overflow-y: scroll;
+        word-break: break-all;
+        height: 300px;
         & li {
-          background: #000;
           margin-top: 10px;
-          
-          & .name{
+          height: 80px;
+          color: #333;
+          & .name {
+          }
+          & .container{
+            text-indent: 2em;
             float: left;
           }
         }
