@@ -66,9 +66,11 @@ export default {
 };
 </script>
 
+
+
 <style lang="scss" scoped>
 .comment {
-  
+
   &-open {
     position: fixed;
     z-index: 99;
