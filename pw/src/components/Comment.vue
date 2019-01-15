@@ -142,6 +142,7 @@ export default {
           height: 80px;
           color: #333;
           & .name {
+            
           }
           & .container{
             text-indent: 2em;
