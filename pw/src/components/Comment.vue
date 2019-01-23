@@ -36,7 +36,6 @@ export default {
       commentList: []
     };
   },
-
   methods: {
     publish() {
       axios({
