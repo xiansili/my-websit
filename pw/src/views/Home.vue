@@ -33,7 +33,7 @@ export default {
   width: 100%;
   height: 100%;
   background-size: cover;
-  background-clip: content-box;
+ background-position:center;
   background-image: url("../assets/imgs/home/home3.jpg");
   perspective: 2000px;
   
