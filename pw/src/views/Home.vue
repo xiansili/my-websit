@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <!-- <div class="wrapper-cover"></div> -->
-    <div class="wrapper-me">
+    <!-- <div class="wrapper-me">
       <div class="wrapper-me-front cube">
         <h2 class="cube-name">I am xian si li</h2>
         <strong class="cube-welecome">欢迎来到我的网站</strong>
@@ -11,7 +11,7 @@
       <div class="wrapper-me-left cube"></div>
       <div class="wrapper-me-right cube"></div>
       <div class="wrapper-me-back cube"></div>
-    </div>
+    </div> -->
     <div class="wrapper-next">
       <router-link to="/about">
         <img src="@/assets/imgs/next.png" alt="向下">
@@ -33,8 +33,10 @@ export default {
   width: 100%;
   height: 100%;
   background-size: cover;
+  background-clip: content-box;
   background-image: url("../assets/imgs/home/home3.jpg");
   perspective: 2000px;
+  
   &-me {
     position: relative;
     width: 700px;
