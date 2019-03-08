@@ -2,12 +2,13 @@
   <div class="wrapper">
     <div class="wrapper-cover"></div>
     <div class="wrapper-me">
-      <div class="wrapper-me left">
+      <div class="wrapper-me-left"></div>
+      <div class="wrapper-me-right"></div>
         <h2 class="wrapper-me-name">I am xian si li</h2>
         <strong class="wrapper-me-welecome">欢迎来到我的网站</strong>
         <p class="wrapper-me-name">我叫先思力</p>
         <p class="wrapper-me-job">我是一名前端开发工程师</p>
-      </div>
+      
     </div>
     <div class="wrapper-next">
       <router-link to="/about">
@@ -32,19 +33,17 @@ export default {
   background-size: cover;
   background-position: left center;
   background-image: url("../assets/imgs/home/home3.jpg");
-  perspective: 2000px;
 
   &-me {
     position: relative;
-    width: 900px;
-    height: 400px;
+    width: 1000px;
+    height: 360px;
     top: 50%;
     left: 50%;
-    margin-top: -150px;
-    margin-left: -450px;
+    margin-top: -130px;
+    margin-left: -500px;
     color: #000;
     background: #d3d7d4 0.5;
-    border: 2px solid #000;
     &-name,
     &-job {
       text-align: center;
@@ -55,12 +54,27 @@ export default {
       text-align: center;
       margin-top: 20px;
     }
-    & .left{
-     border: 2px solid orange;
-     height: 100%;
-     width: 50%;
+    &-left {
+      position: absolute;
+      border: 2px solid orange;
+      border-top: none;
+      border-right: none;
+      width: 30%;
+      height: 100%;
+    }
+     &-right {
+      float: right;
+      border: 2px solid orange;
+      border-bottom: none;
+      border-left: none;
+      width: 30%;
+      height: 100%;
+      margin-right: 100px;
     }
   }
+
+
+
   //下一页面箭头
   &-next {
     position: absolute;
