@@ -31,7 +31,7 @@ import axios from "axios";
 export default {
   data() {
     return {
-      isComment: true,
+      isComment: false,
       content: "",
       commentList: []
     };

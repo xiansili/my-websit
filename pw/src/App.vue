@@ -5,7 +5,7 @@
     <Music></Music>
     <Dialog></Dialog>
     <Comment></Comment>
-    <Login></Login>
+    <!-- <Login></Login> -->
     <router-view/>
   </div>
 </template>
@@ -15,7 +15,7 @@ import Nav from "@/components/Nav.vue";
 import Menu from "@/components/Menu.vue";
 import Music from "@/components/Music.vue";
 import Comment from "@/components/Comment.vue";
-import Login from "@/components/Login.vue";
+// import Login from "@/components/Login.vue";
 
 // import Dialog from "@/components/Dialog.vue";
 
@@ -25,7 +25,7 @@ export default {
     Menu,
     Music,
     Comment,
-    Login
+    // Login
     // Dialog
   },
   data() {

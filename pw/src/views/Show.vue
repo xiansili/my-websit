@@ -3,8 +3,8 @@
     <div class="wrapper-cover"></div>
     <div class="wrapper-show">
       <div class="wrapper-show-box">
-        <div class="wrapper-show-box-piece1 piece">本网站</div>
-        <div class="wrapper-show-box-piece2 piece">作品</div>
+        <div class="wrapper-show-box-piece1 piece"></div>
+        <div class="wrapper-show-box-piece2 piece">作品2</div>
         <div class="wrapper-show-box-piece3 piece">作品3</div>
         <div class="wrapper-show-box-piece4 piece">作品4</div>
         <div class="wrapper-show-box-piece5 piece">作品5</div>
@@ -66,7 +66,8 @@ export default {};
         color: #000;
       }
       &-piece1 {
-        background: #f66;
+        background-image: url("../assets/imgs/skill1.png");
+        background-size: 100% 100%;
         transform: rotateY(0deg) translateZ(173.2px);
       }
       &-piece2 {

@@ -21,13 +21,13 @@
               <li>姓名:</li>
               <li>生日:</li>
               <li>爱好:</li>
-              <li>电话:</li>
+              <li>邮箱:</li>
             </ul>
             <ul class="wrapper-contact-right-box-ul2">
               <li>先思力</li>
               <li>19970812</li>
               <li>前端,吉他,音乐</li>
-              <li>18804626062</li>
+              <li>86915497@qq.com</li>
             </ul>
             <span>不管多么险峻的高山，总是为不畏艰难的人留下一条攀登的路。</span>
           </div>

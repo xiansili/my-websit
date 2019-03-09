@@ -4,11 +4,9 @@
     <div class="wrapper-me">
       <div class="wrapper-me-left"></div>
       <div class="wrapper-me-right"></div>
-        <h2 class="wrapper-me-name">I am xian si li</h2>
-        <strong class="wrapper-me-welecome">欢迎来到我的网站</strong>
-        <p class="wrapper-me-name">我叫先思力</p>
-        <p class="wrapper-me-job">我是一名前端开发工程师</p>
-      
+      <h1 class="wrapper-me-welecome">欢迎来到我的网站</h1>
+      <h1 class="wrapper-me-name">我叫先思力</h1>
+      <h1 class="wrapper-me-job">我是一名前端开发工程师</h1>
     </div>
     <div class="wrapper-next">
       <router-link to="/about">
@@ -40,31 +38,35 @@ export default {
     height: 360px;
     top: 50%;
     left: 50%;
-    margin-top: -130px;
+    margin-top: -150px;
     margin-left: -500px;
     color: #000;
     background: #d3d7d4 0.5;
     &-name,
     &-job {
+      position: relative;
+      top: 50px;
       text-align: center;
+      color: #ffc20e;
     }
     &-welecome {
-      float: left;
-      width: 100%;
+      position: relative;
       text-align: center;
-      margin-top: 20px;
+      color: #009ad6;
+      font-family: "微软雅黑";
+      font-style: oblique;
     }
     &-left {
-      position: absolute;
-      border: 2px solid orange;
+      float: left;
+      border: 2px solid #fcaf17;
       border-top: none;
       border-right: none;
       width: 30%;
       height: 100%;
     }
-     &-right {
+    &-right {
       float: right;
-      border: 2px solid orange;
+      border: 2px solid #fcaf17;
       border-bottom: none;
       border-left: none;
       width: 30%;
@@ -72,8 +74,6 @@ export default {
       margin-right: 100px;
     }
   }
-
-
 
   //下一页面箭头
   &-next {

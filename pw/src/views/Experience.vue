@@ -2,16 +2,19 @@
   <div class="wrapper">
     <div class="wrapper-cover">
       <div class="wrapper-box">
-        <ul>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
-          <li>9</li>
+        <ul class="number">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <ul class="site">
+          <li>
+            <h3 class="p1">黑龙江大学(3)</h3>
+            <p class="p2"></p>
+            <h3 class="p3">2019年 3月</h3>
+          </li>
         </ul>
       </div>
     </div>
@@ -33,26 +36,46 @@ export default {};
 
   &-box {
     width: 900px;
-    height: 600px;
-    background-color: #fff;
+    height: 500px;
     position: absolute;
     left: 50%;
     top: 50%;
     margin-left: -450px;
-    margin-top: -300px;
-    & ul {
-   width: 500px;
-   height: 500px;
-   background-color: #000;
-   display: flex;
-    & li{
-      flex-grow: 1;
-      width: 100px;
-      height: 100px;
-      background: blanchedalmond;
-      border-radius: 100%;
-      
+    margin-top: -250px;
+    & .number {
+      float: left;
+      margin-left: 100px;
+      & li {
+        width: 20px;
+        height: 20px;
+        margin-top: 65px;
+        background: #50b7c1;
+        border-radius: 100%;
+        text-align: center;
+        line-height: 20px;
+      }
     }
+    & .site {
+      float: left;
+      margin-left: 200px;
+    }
+    & li {
+      height: 20px;
+      margin-top: 40px;
+      text-align: center;
+      line-height: 20px;
+      color: #feeeed;
+      & .p2 {
+        width: 400px;
+        height: 0;
+        border: 2px solid #ffc20e;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      & h3 {
+        font-family: "微软雅黑";
+        font-style: oblique;
+      }
     }
   }
 }
